@@ -78,12 +78,12 @@ footer {
   width: 100%;
   background: rgb(99, 87, 87);
   position: relative;
-  background-image: url("land-1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5px;
 }
+
 .left-btn {
   position: absolute;
   left: 30px;
