@@ -50,6 +50,14 @@ rbtn.addEventListener("click", () => {
   showImage(i);
 });
 
+setInterval(()=>{
+  i++;
+  if (i > 2) {
+    i = 0;
+  }
+  console.log(i);
+  showImage(i);
+},3000);
 
 function showImage(index) {
   content.style.backgroundImage = `url(${imageLinks[index]})`;
