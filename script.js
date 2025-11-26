@@ -50,14 +50,14 @@ rbtn.addEventListener("click", () => {
   showImage(i);
 });
 
-setInterval(()=>{
+setInterval(() => {
   i++;
   if (i > 2) {
     i = 0;
   }
   console.log(i);
   showImage(i);
-},3000);
+}, 3000);
 
 function showImage(index) {
   content.style.backgroundImage = `url(${imageLinks[index]})`;
@@ -75,3 +75,22 @@ function showImage(index) {
     dot3.style.background = "white";
   }
 }
+
+window.addEventListener("load", () => {
+  const textElement = document.getElementById("type-text");
+  const fullText = textElement.textContent.trim();
+  textElement.textContent = "";
+
+  let index = 0;
+  let c = 0;
+  function typeLetter() {
+    if (index < fullText.length) {
+      textElement.textContent += fullText.charAt(index);
+      index++;
+      setTimeout(typeLetter, 50);
+      //typeLetter();
+    }
+  }
+
+  typeLetter();
+});
