@@ -1,13 +1,33 @@
-::-webkit-scrollbar {
-  display: none;
+ul>li>a{
+  text-decoration: none;
 }
+ul>li{
+  list-style-type: none;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+  border: 3px solid #f0f0f0;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  background: rgb(124, 67, 67);
 }
 header {
   min-height: 50px;
@@ -51,9 +71,70 @@ ul li a {
   border-radius: 5px;
   height: 40px;
 }
+.sugbox {
+  min-height: 60px;
+  max-height: 300px;
+  width: 400px;
+  position: fixed;
+  z-index: 10;
+  top: 98px;
+  right: 129px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  overflow-y: scroll;
+  background: rgba(192, 194, 192, 0.4);
+  opacity: 0;
+  pointer-events: none;
+}
+.sugbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sugbox::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sugbox::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sugbox::-webkit-scrollbar-thumb {
+  background: rgb(4, 70, 114);
+  border-radius: 5px;
+}
+
+.sugelem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  width: 373px;
+  padding: 5px 10px;
+  font-size: x-large;
+}
+.sugelem:hover > .divelem {
+  background: yellow;
+}
+.divelem {
+  width: 82%;
+  padding: 5px 10px;
+  background: white;
+}
+.delbtn {
+  width: 4%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  background: red;
+  color: white;
+}
 section {
   height: 180vh;
-  background-color: rgb(211, 198, 198);
+
   padding: 0 10px;
 }
 footer {
@@ -70,13 +151,11 @@ footer {
 .sec-1 {
   height: 400px;
   padding: 10px 25px;
-  background: rgb(119, 88, 88);
-  border: 1px solid black;
 }
 .content {
   height: 100%;
   width: 100%;
-  background: rgb(99, 87, 87);
+
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -108,7 +187,7 @@ footer {
 }
 .sec-2 {
   height: 90px;
-  border: 1px solid black;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +196,7 @@ footer {
 
 .sec-3 {
   height: 450px;
-  border: 1px solid black;
+
   margin: 10px 20px;
   padding: 10px 20px;
   gap: 15px;
@@ -125,10 +204,27 @@ footer {
   flex-wrap: wrap;
   overflow-x: scroll;
 }
+
+.sec-3::-webkit-scrollbar {
+  height: 5px;
+}
+
+.sec-3::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sec-3::-webkit-scrollbar-thumb {
+  background-color: #02034d;
+  border-radius: 5px;
+}
+
+.sec-3::-webkit-scrollbar-thumb:hover {
+  background-color: #333;
+}
+
 .card {
   height: 400px;
   width: 380px;
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,7 +255,6 @@ footer {
 .side-bar {
   height: 300px;
   width: 200px;
-  /* border: 1px solid black; */
   position: fixed;
   top: 100px;
   z-index: 999900;
@@ -212,7 +307,6 @@ footer {
   }
 
   .side-bar > ul > li {
-    /* background: rgb(214, 214, 214); */
     width: 100%;
   }
   nav {
@@ -262,6 +356,11 @@ footer {
   }
   .sec-3 {
     height: 350px;
+  }
+  .sugbox {
+    min-height: 30px;
+    max-height: 260px;
+    width: 511px;
   }
 }
 @media (max-width: 650px) {
@@ -333,13 +432,14 @@ footer {
     font-size: x-small;
     padding: 0 10px;
     margin-top: 10px;
+    height: 140px;
   }
   .card {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 250px;
   }
   .sec-3 {
-    height: 250px;
+    height: 370px;
   }
   section {
     height: 130vh;
@@ -347,7 +447,22 @@ footer {
   .card-img {
     width: 170px;
   }
-  section {
-    height: 100svh;
+
+  .divelem,
+  .delbtn {
+    font-size: 15px;
+  }
+  .sugelem {
+    height: 34px;
+    width: 260px;
+    padding: 1px;
+    font-size: unset;
+  }
+  .sugbox {
+    min-height: 60px;
+    max-height: 300px;
+    width: 280px;
+    top: 134px;
+    right: 0;
   }
 }
