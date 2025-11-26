@@ -1,0 +1,41 @@
+.flex{
+  display:flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.items-center{
+  align-items: center;
+}
+.items-self-start{
+  align-items: self-start;
+}
+.justify-center{
+  justify-content: center;
+}
+.space-betn{
+  justify-content: space-between;
+}
+.space-arround{
+  justify-content: space-around;
+}
+.space-evenly{
+  justify-content: space-evenly;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.semibold{
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mx-25{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.x-small{
+  font-size: x-small;
+}
+.p-fixed{
+  position: fixed;
+}
